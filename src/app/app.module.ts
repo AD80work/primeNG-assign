@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { TableModule } from 'primeng/table';
 
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
+
+import { EventService } from './services/eventService/event-service.service';
 
 @NgModule({
   declarations: [
@@ -14,9 +17,10 @@ import { TableComponent } from './components/table/table.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpClientModule,
+    TableModule
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
