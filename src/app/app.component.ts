@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Saturday Events!';
-  note = 'All events start at 12:00PM unless it states otherwise.'
+  note = 'All events start at 12:00PM unless stated otherwise.'
   
 }
