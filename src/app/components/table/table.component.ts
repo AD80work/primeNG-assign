@@ -28,13 +28,13 @@ export class TableComponent implements OnInit {
     ];
   }
 
-  showDialog(index, content: string) {
+  showDialog(index) {
     this.display = true;
-    this.content = content;
+    this.content = index.description;
     this.tableIndex = this.events.indexOf(index);
   }
 
-  updateContent(index: number) {
+  updateContent() {
     this.display = false;
     this.events[this.tableIndex].description = this.content;
   }
