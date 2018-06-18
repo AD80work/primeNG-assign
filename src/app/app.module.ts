@@ -6,6 +6,7 @@ import { TableModule } from 'primeng/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ButtonModule } from 'primeng/button';
 
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
@@ -24,7 +25,8 @@ import { EventService } from './services/eventService/event-service.service';
     TableModule,
     BrowserAnimationsModule,
     DialogModule,
-    InputTextareaModule
+    InputTextareaModule,
+    ButtonModule
   ],
   providers: [EventService],
   bootstrap: [AppComponent]

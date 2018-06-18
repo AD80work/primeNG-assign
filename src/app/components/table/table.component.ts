@@ -4,6 +4,7 @@ import { EventService } from "../../services/eventService/event-service.service"
 import { TableModule } from "primeng/table";
 import { DialogModule } from 'primeng/dialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-table',
