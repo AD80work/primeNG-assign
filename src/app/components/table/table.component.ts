@@ -25,7 +25,7 @@ export class TableComponent implements OnInit {
     this.cols = [
       { field: 'description', header: 'Description' },
       { field: 'date', header: 'Date' },
-      { field: 'address', header: 'Location' }
+      { field: 'address', header: 'Address' }
     ];
   }
 
