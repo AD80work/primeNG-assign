@@ -17,5 +17,5 @@
 </p-table>
 <p-dialog header="Edit Description" [(visible)]="display" [width]="500" [height]="300">
   <textarea pInputTextarea [(ngModel)]="content" [rows]="7" [cols]="60" placeholder="{{content}}"></textarea>
-  <button (click)="updateContent()"></button>
+  <button (click)="updateContent()" >Update</button>
 </p-dialog>
