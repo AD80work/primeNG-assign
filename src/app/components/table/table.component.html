@@ -1,17 +1,22 @@
 
-<p-table [value]="events">
+<p-table [value]="events" [scrollable]="true" scrollHeight="200px">
   <ng-template pTemplate="header">
       <tr>
-          <th *ngFor="let col of cols">
-              {{col.header}}
-          </th>
+        <th *ngFor="let col of cols" [pSortableColumn]="col.field">
+            {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
       </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-event>
+  <ng-template pTemplate="body" let-event let-index>
       <tr>
-          <td *ngFor="let col of cols">
-                  {{event[col.field]}}
-          </td>
+        <td (click)="showDialog(index, event.description)">{{event.description}}</td>
+        <td>{{event.date}}</td>
+        <td>{{event.address}}</td>
       </tr>
   </ng-template>
 </p-table>
+<p-dialog header="Edit Description" [(visible)]="display" [width]="500" [height]="300">
+        <textarea pInputTextarea [(ngModel)]="content" [rows]="7" [cols]="60" placeholder="{{content}}"> </textarea>
+        <button (click)="updateContent()"></button>
+</p-dialog>

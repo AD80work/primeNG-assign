@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Event } from '../../domain/event';
 import { EventService } from "../../services/eventService/event-service.service";
 import { TableModule } from "primeng/table";
+import { DialogModule } from 'primeng/dialog';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @Component({
   selector: 'app-table',
@@ -11,6 +13,9 @@ import { TableModule } from "primeng/table";
 export class TableComponent implements OnInit {
   events: Event[];
   cols: any[];
+  display: boolean = false;
+  content: string;
+  tableIndex: number;
 
   constructor(private eventService: EventService) { }
 
@@ -21,6 +26,17 @@ export class TableComponent implements OnInit {
       { field: 'date', header: 'Date' },
       { field: 'address', header: 'Location' }
     ];
+  }
+
+  showDialog(index, content: string) {
+    this.display = true;
+    this.content = content;
+    this.tableIndex = this.events.indexOf(index);
+  }
+
+  updateContent(index: number) {
+    this.display = false;
+    this.events[this.tableIndex].description = this.content;
   }
 
 }

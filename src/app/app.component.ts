@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Events';
+  title = 'Saturday Events!';
+  note = 'All events start at 12:00PM unless it states otherwise.'
   
 }
